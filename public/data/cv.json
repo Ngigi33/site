@@ -1,0 +1,52 @@
+{
+  "profile": {
+    "name": "Your Name",
+    "title": "Your Title — e.g. Software Engineer",
+    "tagline": "One sentence on what you do and what you care about.",
+    "bio": "A few sentences about your background, what you're working on now, and what you're looking for. Edit this from the admin panel.",
+    "location": "City, Country",
+    "email": "you@example.com",
+    "links": [
+      { "id": "l1", "label": "GitHub", "url": "https://github.com/yourname" },
+      { "id": "l2", "label": "LinkedIn", "url": "https://linkedin.com/in/yourname" }
+    ]
+  },
+  "experience": [
+    {
+      "id": "e1",
+      "role": "Job Title",
+      "company": "Company Name",
+      "location": "City, Country",
+      "start": "2023",
+      "end": "Present",
+      "bullets": [
+        "What you did and the impact it had.",
+        "Another concrete accomplishment."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "ed1",
+      "school": "University Name",
+      "degree": "Degree, Field of Study",
+      "start": "2019",
+      "end": "2023",
+      "details": "Honors, relevant coursework, activities — optional."
+    }
+  ],
+  "projects": [
+    {
+      "id": "p1",
+      "title": "Project Name",
+      "description": "What it is and why you built it.",
+      "tags": ["React", "Node.js"],
+      "link": "https://example.com",
+      "repo": "https://github.com/yourname/project"
+    }
+  ],
+  "skills": [
+    { "id": "s1", "category": "Languages", "items": ["JavaScript", "Python"] },
+    { "id": "s2", "category": "Tools", "items": ["Git", "Docker"] }
+  ]
+}
