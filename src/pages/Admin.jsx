@@ -4,7 +4,7 @@ import { defaultData, makeId } from '../lib/defaultData.js'
 import './admin.css'
 
 const CONFIG_KEY = 'cv-admin-config'
-const DATA_PATH = 'data/cv.json'
+const DATA_PATH = 'docs/data/cv.json'
 
 export default function Admin() {
   const [config, setConfig] = useState(null) // { owner, repo, branch, token }
