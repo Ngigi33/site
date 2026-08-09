@@ -8,6 +8,8 @@ export const defaultData = {
     bio: 'A few sentences about your background, what you\'re working on now, and what you\'re looking for. Edit this from the admin panel.',
     location: 'City, Country',
     email: 'you@example.com',
+    photo: '',
+    videoUrl: '',
     links: [
       { id: 'l1', label: 'GitHub', url: 'https://github.com/yourname' },
       { id: 'l2', label: 'LinkedIn', url: 'https://linkedin.com/in/yourname' }
@@ -44,12 +46,32 @@ export const defaultData = {
       description: 'What it is and why you built it.',
       tags: ['React', 'Node.js'],
       link: 'https://example.com',
-      repo: 'https://github.com/yourname/project'
+      repo: 'https://github.com/yourname/project',
+      image: ''
     }
   ],
   skills: [
     { id: 's1', category: 'Languages', items: ['JavaScript', 'Python'] },
     { id: 's2', category: 'Tools', items: ['Git', 'Docker'] }
+  ],
+  awards: [
+    {
+      id: 'aw1',
+      title: 'Award Name',
+      issuer: 'Issuing Organization',
+      date: '2024',
+      description: 'Optional — what it was for.'
+    }
+  ],
+  certifications: [
+    {
+      id: 'c1',
+      title: 'Certification Name',
+      issuer: 'Issuing Organization',
+      date: '2024',
+      credentialUrl: '',
+      file: ''
+    }
   ]
 }
 

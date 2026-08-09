@@ -6,7 +6,9 @@ const SECTIONS = [
   { id: 'experience', num: '01', label: 'Experience' },
   { id: 'education', num: '02', label: 'Education' },
   { id: 'projects', num: '03', label: 'Projects' },
-  { id: 'skills', num: '04', label: 'Skills' }
+  { id: 'skills', num: '04', label: 'Skills' },
+  { id: 'awards', num: '05', label: 'Awards' },
+  { id: 'certifications', num: '06', label: 'Certifications' }
 ]
 
 export default function PublicSite() {
@@ -39,7 +41,7 @@ export default function PublicSite() {
     )
   }
 
-  const { profile, experience, education, projects, skills } = data
+  const { profile, experience, education, projects, skills, awards, certifications } = data
 
   return (
     <div className="doc">
@@ -60,9 +62,20 @@ export default function PublicSite() {
 
       <main className="sheet">
         <section id="profile" className="block profile-block">
-          <p className="eyebrow">Curriculum Vitae</p>
-          <h1>{profile.name}</h1>
-          <p className="title-line">{profile.title}</p>
+          <div className="profile-top">
+            <div>
+              <p className="eyebrow">Curriculum Vitae</p>
+              <h1>{profile.name}</h1>
+              <p className="title-line">{profile.title}</p>
+            </div>
+            {profile.photo && (
+              <img
+                className="profile-photo"
+                src={profile.photo.startsWith('http') ? profile.photo : `${import.meta.env.BASE_URL}${profile.photo}`}
+                alt={profile.name}
+              />
+            )}
+          </div>
           <p className="tagline">{profile.tagline}</p>
           <p className="bio">{profile.bio}</p>
           <div className="meta-row">
@@ -76,6 +89,7 @@ export default function PublicSite() {
               </a>
             ))}
           </div>
+          {profile.videoUrl && <VideoEmbed url={profile.videoUrl} />}
         </section>
 
         <section id="experience" className="block">
@@ -136,6 +150,13 @@ export default function PublicSite() {
           <div className="project-grid">
             {projects?.map((p) => (
               <article key={p.id} className="project-card">
+                {p.image && (
+                  <img
+                    className="project-thumb"
+                    src={p.image.startsWith('http') ? p.image : `${import.meta.env.BASE_URL}${p.image}`}
+                    alt=""
+                  />
+                )}
                 <h3>{p.title}</h3>
                 <p>{p.description}</p>
                 {p.tags?.length > 0 && (
@@ -180,10 +201,103 @@ export default function PublicSite() {
           </div>
         </section>
 
+        <section id="awards" className="block">
+          <h2>
+            <span className="index-num">05</span> Awards
+          </h2>
+          <div className="timeline">
+            {awards?.map((a) => (
+              <article key={a.id} className="entry">
+                <div className="entry-date">{a.date}</div>
+                <div className="entry-body">
+                  <h3>{a.title}</h3>
+                  <p className="entry-sub">{a.issuer}</p>
+                  {a.description && <p className="entry-details">{a.description}</p>}
+                </div>
+              </article>
+            ))}
+            {!awards?.length && <p className="empty">Nothing here yet.</p>}
+          </div>
+        </section>
+
+        <section id="certifications" className="block">
+          <h2>
+            <span className="index-num">06</span> Certifications
+          </h2>
+          <div className="timeline">
+            {certifications?.map((c) => (
+              <article key={c.id} className="entry">
+                <div className="entry-date">{c.date}</div>
+                <div className="entry-body">
+                  <h3>{c.title}</h3>
+                  <p className="entry-sub">{c.issuer}</p>
+                  <div className="cert-links">
+                    {c.credentialUrl && (
+                      <a href={c.credentialUrl} target="_blank" rel="noreferrer">
+                        Verify
+                      </a>
+                    )}
+                    {c.file && (
+                      <a
+                        href={c.file.startsWith('http') ? c.file : `${import.meta.env.BASE_URL}${c.file}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Certificate
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+            {!certifications?.length && <p className="empty">Nothing here yet.</p>}
+          </div>
+        </section>
+
         <footer className="doc-footer">
           <a href="./admin.html">Edit this page</a>
         </footer>
       </main>
     </div>
   )
+}
+
+function VideoEmbed({ url }) {
+  const embedUrl = toEmbedUrl(url)
+  if (!embedUrl) {
+    return (
+      <video className="profile-video" controls src={url}>
+        Your browser can't play this video.
+      </video>
+    )
+  }
+  return (
+    <div className="video-wrap">
+      <iframe
+        src={embedUrl}
+        title="Intro video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
+  )
+}
+
+function toEmbedUrl(url) {
+  try {
+    const u = new URL(url)
+    if (u.hostname.includes('youtube.com') && u.searchParams.get('v')) {
+      return `https://www.youtube.com/embed/${u.searchParams.get('v')}`
+    }
+    if (u.hostname === 'youtu.be') {
+      return `https://www.youtube.com/embed/${u.pathname.slice(1)}`
+    }
+    if (u.hostname.includes('vimeo.com')) {
+      const id = u.pathname.split('/').filter(Boolean).pop()
+      return `https://player.vimeo.com/video/${id}`
+    }
+    return null
+  } catch {
+    return null
+  }
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { verifyAccess, fetchFile, saveFile } from '../lib/github.js'
+import { verifyAccess, fetchFile, saveFile, uploadAsset } from '../lib/github.js'
 import { defaultData, makeId } from '../lib/defaultData.js'
 import './admin.css'
 
@@ -215,11 +215,13 @@ function Editor({ config, data, setData, sha, setSha, status, setStatus, onDisco
         <p className="hint">{status.message}</p>
       ) : (
         <>
-          <ProfileEditor profile={data.profile} onChange={(v) => update('profile', v)} />
+          <ProfileEditor profile={data.profile} onChange={(v) => update('profile', v)} config={config} />
           <ExperienceEditor items={data.experience} onChange={(v) => update('experience', v)} />
           <EducationEditor items={data.education} onChange={(v) => update('education', v)} />
-          <ProjectsEditor items={data.projects} onChange={(v) => update('projects', v)} />
+          <ProjectsEditor items={data.projects} onChange={(v) => update('projects', v)} config={config} />
           <SkillsEditor items={data.skills} onChange={(v) => update('skills', v)} />
+          <AwardsEditor items={data.awards || []} onChange={(v) => update('awards', v)} />
+          <CertificationsEditor items={data.certifications || []} onChange={(v) => update('certifications', v)} config={config} />
 
           <div className="save-bar">
             <span className={`status status-${status.type}`}>{status.message}</span>
@@ -229,6 +231,69 @@ function Editor({ config, data, setData, sha, setSha, status, setStatus, onDisco
           </div>
         </>
       )}
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Reusable file upload field — uploads immediately to the repo and hands
+// back the resulting relative path via onChange.
+// ---------------------------------------------------------------------------
+const MAX_UPLOAD_MB = 8
+
+function UploadField({ label, value, onChange, config, accept, kind = 'image' }) {
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState('')
+
+  async function handleFile(e) {
+    const file = e.target.files?.[0]
+    e.target.value = '' // allow re-selecting the same file later
+    if (!file) return
+    if (file.size > MAX_UPLOAD_MB * 1024 * 1024) {
+      setError(`That file is over ${MAX_UPLOAD_MB}MB — pick something smaller, or use a URL instead.`)
+      return
+    }
+    setError('')
+    setBusy(true)
+    try {
+      const path = await uploadAsset({
+        token: config.token,
+        owner: config.owner,
+        repo: config.repo,
+        branch: config.branch,
+        file
+      })
+      onChange(path)
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <div className="upload-field">
+      <p className="sub-label">{label}</p>
+      {value && kind === 'image' && (
+        <img src={value.startsWith('http') ? value : `./${value}`} alt="" className="upload-preview" />
+      )}
+      {value && kind !== 'image' && (
+        <a href={value.startsWith('http') ? value : `./${value}`} target="_blank" rel="noreferrer" className="upload-file-link">
+          Current file ↗
+        </a>
+      )}
+      <div className="upload-row">
+        <input
+          value={value || ''}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="Uploaded path, or paste a URL"
+        />
+        <label className="upload-btn">
+          {busy ? 'Uploading…' : 'Upload'}
+          <input type="file" accept={accept} onChange={handleFile} disabled={busy} hidden />
+        </label>
+      </div>
+      {error && <p className="error-msg">{error}</p>}
     </div>
   )
 }
@@ -254,7 +319,7 @@ function Card({ title, num, children, onAdd, addLabel }) {
   )
 }
 
-function ProfileEditor({ profile, onChange }) {
+function ProfileEditor({ profile, onChange, config }) {
   function set(field, value) {
     onChange({ ...profile, [field]: value })
   }
@@ -297,6 +362,32 @@ function ProfileEditor({ profile, onChange }) {
         </label>
       </div>
 
+      <UploadField
+        label="Profile photo"
+        value={profile.photo}
+        onChange={(v) => set('photo', v)}
+        config={config}
+        accept="image/*"
+        kind="image"
+      />
+
+      <div className="upload-field">
+        <p className="sub-label">Intro video</p>
+        <p className="hint" style={{ marginBottom: 8 }}>
+          Paste a YouTube/Vimeo link (recommended), or upload a short clip directly.
+        </p>
+        <input
+          value={profile.videoUrl || ''}
+          onChange={(e) => set('videoUrl', e.target.value)}
+          placeholder="https://youtube.com/watch?v=... or uploaded path"
+        />
+        <UploadFieldTrigger
+          config={config}
+          accept="video/*"
+          onUploaded={(path) => set('videoUrl', path)}
+        />
+      </div>
+
       <p className="sub-label">Links</p>
       {profile.links?.map((l) => (
         <div key={l.id} className="row-2 with-remove">
@@ -311,6 +402,49 @@ function ProfileEditor({ profile, onChange }) {
         + Add link
       </button>
     </Card>
+  )
+}
+
+// A bare upload trigger (no text field of its own) — used where a URL field
+// already exists and we just need an "or upload instead" button next to it.
+function UploadFieldTrigger({ config, accept, onUploaded }) {
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState('')
+
+  async function handleFile(e) {
+    const file = e.target.files?.[0]
+    e.target.value = ''
+    if (!file) return
+    if (file.size > MAX_UPLOAD_MB * 1024 * 1024) {
+      setError(`That file is over ${MAX_UPLOAD_MB}MB — pick something smaller, or use a URL instead.`)
+      return
+    }
+    setError('')
+    setBusy(true)
+    try {
+      const path = await uploadAsset({
+        token: config.token,
+        owner: config.owner,
+        repo: config.repo,
+        branch: config.branch,
+        file
+      })
+      onUploaded(path)
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <div style={{ marginTop: 8 }}>
+      <label className="upload-btn">
+        {busy ? 'Uploading…' : 'Upload file instead'}
+        <input type="file" accept={accept} onChange={handleFile} disabled={busy} hidden />
+      </label>
+      {error && <p className="error-msg">{error}</p>}
+    </div>
   )
 }
 
@@ -426,7 +560,7 @@ function EducationEditor({ items, onChange }) {
   )
 }
 
-function ProjectsEditor({ items, onChange }) {
+function ProjectsEditor({ items, onChange, config }) {
   function update(id, field, value) {
     onChange(items.map((it) => (it.id === id ? { ...it, [field]: value } : it)))
   }
@@ -440,7 +574,7 @@ function ProjectsEditor({ items, onChange }) {
   function add() {
     onChange([
       ...items,
-      { id: makeId('p'), title: '', description: '', tags: [], link: '', repo: '' }
+      { id: makeId('p'), title: '', description: '', tags: [], link: '', repo: '', image: '' }
     ])
   }
   function remove(id) {
@@ -473,6 +607,14 @@ function ProjectsEditor({ items, onChange }) {
               <input value={it.repo} onChange={(e) => update(it.id, 'repo', e.target.value)} />
             </label>
           </div>
+          <UploadField
+            label="Thumbnail image"
+            value={it.image}
+            onChange={(v) => update(it.id, 'image', v)}
+            config={config}
+            accept="image/*"
+            kind="image"
+          />
           <button className="remove-btn-wide" onClick={() => remove(it.id)}>
             Remove this project
           </button>
@@ -521,6 +663,103 @@ function SkillsEditor({ items, onChange }) {
         </div>
       ))}
       {!items?.length && <p className="empty">No skill categories yet.</p>}
+    </Card>
+  )
+}
+
+function AwardsEditor({ items, onChange }) {
+  function update(id, field, value) {
+    onChange(items.map((it) => (it.id === id ? { ...it, [field]: value } : it)))
+  }
+  function add() {
+    onChange([...items, { id: makeId('aw'), title: '', issuer: '', date: '', description: '' }])
+  }
+  function remove(id) {
+    onChange(items.filter((it) => it.id !== id))
+  }
+
+  return (
+    <Card title="Awards" num="05" onAdd={add} addLabel="Add award">
+      {items?.map((it) => (
+        <div key={it.id} className="entry-card">
+          <div className="row-3">
+            <label>
+              Title
+              <input value={it.title} onChange={(e) => update(it.id, 'title', e.target.value)} />
+            </label>
+            <label>
+              Issuer
+              <input value={it.issuer} onChange={(e) => update(it.id, 'issuer', e.target.value)} />
+            </label>
+            <label>
+              Date
+              <input value={it.date} onChange={(e) => update(it.id, 'date', e.target.value)} />
+            </label>
+          </div>
+          <label>
+            Description (optional)
+            <textarea rows={2} value={it.description} onChange={(e) => update(it.id, 'description', e.target.value)} />
+          </label>
+          <button className="remove-btn-wide" onClick={() => remove(it.id)}>
+            Remove this award
+          </button>
+        </div>
+      ))}
+      {!items?.length && <p className="empty">No awards yet.</p>}
+    </Card>
+  )
+}
+
+function CertificationsEditor({ items, onChange, config }) {
+  function update(id, field, value) {
+    onChange(items.map((it) => (it.id === id ? { ...it, [field]: value } : it)))
+  }
+  function add() {
+    onChange([
+      ...items,
+      { id: makeId('c'), title: '', issuer: '', date: '', credentialUrl: '', file: '' }
+    ])
+  }
+  function remove(id) {
+    onChange(items.filter((it) => it.id !== id))
+  }
+
+  return (
+    <Card title="Certifications" num="06" onAdd={add} addLabel="Add certification">
+      {items?.map((it) => (
+        <div key={it.id} className="entry-card">
+          <div className="row-3">
+            <label>
+              Title
+              <input value={it.title} onChange={(e) => update(it.id, 'title', e.target.value)} />
+            </label>
+            <label>
+              Issuer
+              <input value={it.issuer} onChange={(e) => update(it.id, 'issuer', e.target.value)} />
+            </label>
+            <label>
+              Date
+              <input value={it.date} onChange={(e) => update(it.id, 'date', e.target.value)} />
+            </label>
+          </div>
+          <label>
+            Credential URL (optional — link to verify online)
+            <input value={it.credentialUrl} onChange={(e) => update(it.id, 'credentialUrl', e.target.value)} />
+          </label>
+          <UploadField
+            label="Certificate file (image or PDF)"
+            value={it.file}
+            onChange={(v) => update(it.id, 'file', v)}
+            config={config}
+            accept="image/*,application/pdf"
+            kind="file"
+          />
+          <button className="remove-btn-wide" onClick={() => remove(it.id)}>
+            Remove this certification
+          </button>
+        </div>
+      ))}
+      {!items?.length && <p className="empty">No certifications yet.</p>}
     </Card>
   )
 }

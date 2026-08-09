@@ -78,3 +78,42 @@ export async function saveFile({ token, owner, repo, branch, path, data, sha, me
   }
   return res.json()
 }
+
+// Reads a File/Blob (from an <input type="file">) as a base64 string,
+// stripping the data: URL prefix.
+function readFileAsBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(reader.result.split(',')[1])
+    reader.onerror = () => reject(new Error('Could not read the selected file.'))
+    reader.readAsDataURL(file)
+  })
+}
+
+// Uploads a binary asset (image, PDF, small video) to the repo under
+// docs/assets/uploads/, returning the relative path to store in cv.json
+// (e.g. "assets/uploads/1699999999-photo.jpg").
+export async function uploadAsset({ token, owner, repo, branch, file }) {
+  const base64 = await readFileAsBase64(file)
+  const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, '-')
+  const filename = `${Date.now()}-${safeName}`
+  const repoPath = `docs/assets/uploads/${filename}`
+
+  const res = await fetch(`${API}/repos/${owner}/${repo}/contents/${repoPath}`, {
+    method: 'PUT',
+    headers: { ...authHeaders(token), 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      message: `Upload ${filename}`,
+      content: base64,
+      branch
+    })
+  })
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}))
+    throw new Error(err.message || `Upload failed (${res.status}).`)
+  }
+
+  // Path relative to the site root (docs/ is the served root).
+  return `assets/uploads/${filename}`
+}

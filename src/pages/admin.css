@@ -309,6 +309,63 @@ button:disabled {
   color: var(--accent);
 }
 
+.upload-field {
+  margin-bottom: 18px;
+}
+
+.upload-preview {
+  display: block;
+  max-width: 180px;
+  max-height: 120px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+
+.upload-file-link {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.upload-row {
+  display: flex;
+  gap: 10px;
+}
+
+.upload-row input {
+  flex: 1;
+}
+
+.upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .upload-row {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 600px) {
   .row-2,
   .row-3,
@@ -320,3 +377,4 @@ button:disabled {
     gap: 16px;
   }
 }
+

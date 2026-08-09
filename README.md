@@ -90,18 +90,34 @@ src/
     PublicSite.jsx   — the public CV page
     Admin.jsx         — the admin editing forms
   lib/
-    github.js         — GitHub API calls (read/write cv.json)
+    github.js         — GitHub API calls (read/write cv.json, upload files)
     defaultData.js     — the data shape + starter placeholder content
-public/data/cv.json    — source copy of the starter data (only used on a fresh build)
+  data/
+    starter-cv.json    — copied into docs/data/cv.json only on the very first build
+scripts/
+  build.mjs            — builds the site, then backs up/restores your live
+                          data and uploads so a design change never wipes them
 docs/                  — build output, this is what GitHub Pages serves
 docs/data/cv.json      — the LIVE data file the admin panel edits directly
+docs/assets/uploads/   — photos, project thumbnails, certificate files you upload
 ```
 
-## Security note
+## Sections included
 
-The admin panel is a public HTML page (anyone can open `admin.html`), but
+Profile, Experience, Education, Projects, Skills, Awards, and Certifications
+— all editable from `/admin.html`. Profile supports a photo and an intro
+video (YouTube/Vimeo link, or a small uploaded clip). Projects support a
+thumbnail image. Certifications support an uploaded certificate file (image
+or PDF) plus an optional "verify online" link.
+
+Uploads go straight into your repo under `docs/assets/uploads/` — same
+mechanism as saving text content, just for binary files. There's an 8MB
+cap per file in the admin panel; for anything bigger (like real video),
+use a URL instead (YouTube, Vimeo, Google Drive, etc.) rather than
+uploading it into the repo.
+
+## Security note (anyone can open `admin.html`), but
 it's useless without your personal access token, which only you have. Treat
 that token like a password — it grants write access to this repo. If you
 ever think it's been exposed, revoke it from GitHub's token settings and
 generate a new one.
-# site
