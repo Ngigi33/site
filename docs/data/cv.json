@@ -30,19 +30,14 @@
       "start": "2025",
       "end": "Present",
       "bullets": [
-        "● Monitor, calibrate, and maintain critical plant instrumentation (pressure, temperature, and level transmitters), ensuring",
-        "accurate readings across manometers, thermometers, and digital indicators.",
-        "● Troubleshoot and repair plant electrical panels, replacing faulty contactors, transformers, fuses, and relays to restore",
-        "functionality with minimal downtime.",
-        "● Inspect critical assets in MV/HV rooms and the HV substation using multimeters, frequency meters, capacitance meters, DC",
-        "sources, and oscilloscopes for precise circuit diagnostics.",
-        "● Diagnose and repair automated control circuits, sensors, and pneumatic/hydraulic actuators, valves, and motors.",
-        "● Enforce plant safety compliance through rigorous Lockout/Tagout (LOTO) procedures and rapid emergency response to",
-        "protect personnel and equipment.",
-        "● Analyze operational data trends to help the engineering team predict failures and optimize plant performance.",
-        "● Contributed to a 24,000-hour Preventive Maintenance Service (PMS) cycle on a 16 MW generator, including testing and",
-        "calibration of SIPROTEC protection relays.",
-        "● Manage inventory and lifecycle tracking of electrical tools/materials and provide internal IT network support."
+        "Monitor, calibrate, and maintain critical plant instrumentation (pressure, temperature, and level transmitters), ensuring accurate readings across manometers, thermometers, and digital indicators.",
+        "Troubleshoot and repair plant electrical panels, replacing faulty contactors, transformers, fuses, and relays to restore functionality with minimal downtime.",
+        "Inspect critical assets in MV/HV rooms and the HV substation using multimeters, frequency meters, capacitance meters, DC sources, and oscilloscopes for precise circuit diagnostics.",
+        "Diagnose and repair automated control circuits, sensors, and pneumatic/hydraulic actuators, valves, and motors.",
+        "Enforce plant safety compliance through rigorous Lockout/Tagout (LOTO) procedures and rapid emergency response to protect personnel and equipment.",
+        "Analyze operational data trends to help the engineering team predict failures and optimize plant performance.",
+        "Contributed to a 24K-hour Preventive Maintenance Service (PMS) cycle on a 16 MW generator, including testing and calibration of SIPROTEC protection relays.",
+        "Manage inventory and lifecycle tracking of electrical tools/materials and provide internal IT network support."
       ]
     },
     {
@@ -53,12 +48,11 @@
       "start": "2025",
       "end": "2026",
       "bullets": [
-        "● Programmed and optimized an xArm 7 for high-precision human-robot collaborative (HRC) tasks in shared industrial",
-        "workspaces.",
-        "● Refined motion planning and safety parameters to enable seamless human-robot interaction.",
-        "● Designed synchronized human-robot task workflows that improved operational efficiency and ergonomic safety.",
-        "● Collaborated on integrating Augmented Reality (AR) tools for real-time task visualization and operator awareness.",
-        "● Led testing and validation of collaborative robotics scenarios."
+        "Programmed and optimized an xArm 7 for high-precision human-robot collaborative (HRC) tasks in shared industrial workspaces.",
+        "Refined motion planning and safety parameters to enable seamless human-robot interaction.",
+        "Designed synchronized human-robot task workflows that improved operational efficiency and ergonomic safety.",
+        "Collaborated on integrating Augmented Reality (AR) tools for real-time task visualization and operator awareness.",
+        "Led testing and validation of collaborative robotics scenarios."
       ]
     },
     {
@@ -69,8 +63,8 @@
       "start": "2023",
       "end": "",
       "bullets": [
-        "● Deliver IoT and embedded software projects for clients worldwide using ESP32, Arduino, and Raspberry Pi.",
-        "● Build cloud-connected dashboards and firmware with MQTT, Node-RED, and Firebase; maintain consistently high client",
+        "Deliver IoT and embedded software projects for clients worldwide using ESP32, Arduino, and Raspberry Pi.",
+        "Build cloud-connected dashboards and firmware with MQTT, Node-RED, and Firebase; maintain consistently high client",
         "ratings."
       ]
     },
@@ -82,8 +76,8 @@
       "start": "2024",
       "end": "2024",
       "bullets": [
-        "● Designed and led an interactive Flutter course for kids, building a full curriculum from UI design through deployment.",
-        "● Increased student engagement by 50% through hands-on, project-based teaching."
+        "Designed and led an interactive Flutter course for kids, building a full curriculum from UI design through deployment.",
+        "Increased student engagement by 50% through hands-on, project-based teaching."
       ]
     },
     {
@@ -94,8 +88,8 @@
       "start": "2023",
       "end": "2023",
       "bullets": [
-        "● Guided students in building STM32-based line-tracking robots and a 5-DOF robotic arm.",
-        "● Taught embedded systems fundamentals through hands-on STM32CubeIDE lessons."
+        "Guided students in building STM32-based line-tracking robots and a 5-DOF robotic arm.",
+        "Taught embedded systems fundamentals through hands-on STM32CubeIDE lessons."
       ]
     }
   ],
