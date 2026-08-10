@@ -125,7 +125,7 @@
       "title": "PentaSLAMBot ( Autonomous Mobile Robot )",
       "description": "Built a ROS2-based robot using Raspberry Pi 5, Lidar SLAM mapping, and an\nSTM32-driven differential drive for autonomous waypoint navigation.",
       "tags": [
-        "ROS2"
+        "ROS2.SLAM"
       ],
       "link": "https://example.com",
       "repo": "https://github.com/Ngigi33/PentaSLAMBot",
@@ -133,6 +133,33 @@
     },
     {
       "id": "pmsn9laotby71",
+      "title": "",
+      "description": "",
+      "tags": [],
+      "link": "",
+      "repo": "",
+      "image": ""
+    },
+    {
+      "id": "pmsn9sxy7ynsz",
+      "title": "",
+      "description": "",
+      "tags": [],
+      "link": "",
+      "repo": "",
+      "image": ""
+    },
+    {
+      "id": "pmsn9syldt9ku",
+      "title": "",
+      "description": "",
+      "tags": [],
+      "link": "",
+      "repo": "",
+      "image": ""
+    },
+    {
+      "id": "pmsn9sz4cylb4",
       "title": "",
       "description": "",
       "tags": [],
