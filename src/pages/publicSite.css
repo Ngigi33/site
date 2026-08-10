@@ -119,8 +119,8 @@
 /* ---- Main sheet ---- */
 .sheet {
   width: 100%;
-  max-width: 860px;
-  padding: 64px 56px 80px;
+  max-width: 1080px;
+  padding: 64px 64px 80px;
 }
 
 .block {
@@ -494,6 +494,12 @@
 
 .doc-footer a:hover {
   color: var(--blue);
+}
+
+@media (min-width: 1180px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* ---- Responsive ---- */
