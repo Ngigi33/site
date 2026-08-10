@@ -19,6 +19,13 @@
   background-position: -1px -1px;
 }
 
+.main-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
 /* ---- Sidebar console ---- */
 .index {
   width: 220px;
@@ -28,9 +35,8 @@
   border-right: 1px solid var(--line);
   position: sticky;
   top: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .index-mark {
@@ -96,7 +102,8 @@
 }
 
 .index-admin {
-  margin-top: auto;
+  display: block;
+  margin-top: 32px;
   font-family: var(--mono);
   font-size: 12px;
   color: var(--ink-faint);
@@ -111,8 +118,8 @@
 
 /* ---- Main sheet ---- */
 .sheet {
-  flex: 1;
-  max-width: 780px;
+  width: 100%;
+  max-width: 860px;
   padding: 64px 56px 80px;
 }
 

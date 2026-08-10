@@ -63,7 +63,8 @@ export default function PublicSite() {
         </a>
       </aside>
 
-      <main className="sheet">
+      <main className="main-wrap">
+      <div className="sheet">
         <section id="profile" className="block profile-block">
           <div className="profile-top">
             <div>
@@ -272,6 +273,7 @@ export default function PublicSite() {
         <footer className="doc-footer">
           <a href="./admin.html">Edit this page</a>
         </footer>
+      </div>
       </main>
     </div>
   )
