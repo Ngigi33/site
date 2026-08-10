@@ -125,20 +125,20 @@
       "title": "PentaSLAMBot ( Autonomous Mobile Robot )",
       "description": "Built a ROS2-based robot using Raspberry Pi 5, Lidar SLAM mapping, and an\nSTM32-driven differential drive for autonomous waypoint navigation.",
       "tags": [
-        "ROS2.SLAM"
+        "ROS2"
       ],
-      "link": "https://example.com",
+      "link": "https://www.youtube.com/watch?v=YYv-ofKobwM",
       "repo": "https://github.com/Ngigi33/PentaSLAMBot",
       "image": "assets/uploads/1786368512580-1767702034177.jpeg"
     },
     {
       "id": "pmsn9laotby71",
-      "title": "",
-      "description": "",
+      "title": "Sorting and Distributing Station ",
+      "description": "A fully automated industrial sorting system designed to detect and classify workpieces by material and color—categorizing black and pink items as plastic, and standard components as metal. Programmed using TIA Portal V17, the solution integrates robust PLC logic with an intuitive HMI interface for real-time control, status monitoring, and diagnostic oversight. Built on core principles of mechatronics and sensor integration, it delivers an efficient, reliable solution for modern automated manufacturing.",
       "tags": [],
-      "link": "",
-      "repo": "",
-      "image": ""
+      "link": "https://drive.google.com/file/d/1RxOxBeuPC6o6K43BITRC35AevG_E10Yt/view",
+      "repo": "https://github.com/Ngigi33/Festo-Sorting-and-Distributing-Station-with-Scalance-and-HMI-Comfort",
+      "image": "assets/uploads/1786385727539-369695616-d80b5af0-d23d-4093-8e1f-3fc2cb586204.jpg"
     },
     {
       "id": "pmsn9sxy7ynsz",
@@ -174,7 +174,7 @@
       "category": "Languages",
       "items": [
         "JavaScript",
-        "Python"
+        "Pythonc+++"
       ]
     },
     {
