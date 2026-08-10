@@ -1,37 +1,95 @@
 {
   "profile": {
     "name": "Joe Albert Ngigi ",
-    "title": "Your Title — e.g. Software Engineer",
-    "tagline": "One sentence on what you do and what you care about.",
-    "bio": "A few sentences about your background, what you're working on now, and what you're looking for. Edit this from the admin panel.",
-    "location": "City, Country",
-    "email": "you@example.com",
+    "title": "Mechatronics & Automation Engineer",
+    "tagline": "Mechatronics & Automation Engineer WorldSkills Lyon 2024 Champion · PLC/SCADA · Robotics · Embedded IoT",
+    "bio": "Mechatronics engineer with hands-on experience across industrial automation, robotics, and embedded IoT systems. WorldSkills Lyon 2024 international champion and Kenya's 2023 national gold medalist in Mechatronics, with a track record of turning complex technical problems into safe, reliable, well-documented solutions.",
+    "location": "Nairobi , Kenya",
+    "email": "joe.albert.ngigi@gmail.com",
     "photo": "",
     "videoUrl": "",
     "links": [
       {
         "id": "l1",
         "label": "GitHub",
-        "url": "https://github.com/yourname"
+        "url": "https://github.com/Ngigi33"
       },
       {
         "id": "l2",
         "label": "LinkedIn",
-        "url": "https://linkedin.com/in/yourname"
+        "url": "https://www.linkedin.com/in/joe-ngigi-988548232/"
       }
     ]
   },
   "experience": [
     {
       "id": "e1",
-      "role": "Job Title",
-      "company": "Company Name",
-      "location": "City, Country",
-      "start": "2023",
+      "role": "Assistant Shift Technician (Instrumentation & Control)",
+      "company": "Thika Power",
+      "location": "Thika , Kenya",
+      "start": "2025",
       "end": "Present",
       "bullets": [
-        "What you did and the impact it had.",
-        "Another concrete accomplishment."
+        "Monitor, calibrate, and maintain critical plant instrumentation (pressure, temperature, and level transmitters), ensuring accurate readings across manometers, thermometers, and digital indicators.",
+        "Troubleshoot and repair plant electrical panels, replacing faulty contactors, transformers, fuses, and relays to restore functionality with minimal downtime.",
+        "Inspect critical assets in MV/HV rooms and the HV substation using multimeters, frequency meters, capacitance meters, DC sources, and oscilloscopes for precise circuit diagnostics.",
+        "Diagnose and repair automated control circuits, sensors, and pneumatic/hydraulic actuators, valves, and motors.",
+        "Enforce plant safety compliance through rigorous Lockout/Tagout (LOTO) procedures and rapid emergency response to protect personnel and equipment.",
+        "Analyze operational data trends to help the engineering team predict failures and optimize plant performance.",
+        "Contributed to a 24K-hour Preventive Maintenance Service (PMS) cycle on a 16 MW generator, including testing and calibration of SIPROTEC protection relays.",
+        "Manage inventory and lifecycle tracking of electrical tools/materials and provide internal IT network support."
+      ]
+    },
+    {
+      "id": "emsn5qam26x1k",
+      "role": "Robotics Research Assistant (Part-time)",
+      "company": "Virtual Mechatronics Lab",
+      "location": "Nyeri , Kenya",
+      "start": "2025",
+      "end": "2026",
+      "bullets": [
+        "Programmed and optimized an xArm 7 for high-precision human-robot collaborative (HRC) tasks in shared industrial workspaces.",
+        "Refined motion planning and safety parameters to enable seamless human-robot interaction.",
+        "Designed synchronized human-robot task workflows that improved operational efficiency and ergonomic safety.",
+        "Collaborated on integrating Augmented Reality (AR) tools for real-time task visualization and operator awareness.",
+        "Led testing and validation of collaborative robotics scenarios."
+      ]
+    },
+    {
+      "id": "emsn5sk5b05ch",
+      "role": "Embedded Systems Designer (Freelance)",
+      "company": "Fiverr",
+      "location": "Remote",
+      "start": "2023",
+      "end": "",
+      "bullets": [
+        "Deliver IoT and embedded software projects for clients worldwide using ESP32, Arduino, and Raspberry Pi.",
+        "Build cloud-connected dashboards and firmware with MQTT, Node-RED, and Firebase; maintain consistently high client",
+        "ratings."
+      ]
+    },
+    {
+      "id": "emsn5urmbuzsn",
+      "role": "Flutter Mobile App Tutor",
+      "company": "Bynahry",
+      "location": "Remote",
+      "start": "2024",
+      "end": "2024",
+      "bullets": [
+        "Designed and led an interactive Flutter course for kids, building a full curriculum from UI design through deployment.",
+        "Increased student engagement by 50% through hands-on, project-based teaching."
+      ]
+    },
+    {
+      "id": "emsn5xgtyp2c0",
+      "role": "Embedded Systems Instructor & Engineer",
+      "company": "ArtSam and Wira Technologies",
+      "location": "Nyeri ,Kenya",
+      "start": "2023",
+      "end": "2023",
+      "bullets": [
+        "Guided students in building STM32-based line-tracking robots and a 5-DOF robotic arm.",
+        "Taught embedded systems fundamentals through hands-on STM32CubeIDE lessons."
       ]
     }
   ],
