@@ -8,7 +8,8 @@ const SECTIONS = [
   { id: 'projects', num: '03', label: 'Projects' },
   { id: 'skills', num: '04', label: 'Skills' },
   { id: 'awards', num: '05', label: 'Awards' },
-  { id: 'certifications', num: '06', label: 'Certifications' }
+  { id: 'certifications', num: '06', label: 'Certifications' },
+  { id: 'contact', num: '07', label: 'Contact' }
 ]
 
 export default function PublicSite() {
@@ -267,6 +268,27 @@ export default function PublicSite() {
               </article>
             ))}
             {!certifications?.length && <p className="empty">Nothing here yet.</p>}
+          </div>
+        </section>
+
+        <section id="contact" className="block">
+          <h2>
+            <span className="index-num">07</span> Contact
+          </h2>
+          <p className="contact-intro">Open to opportunities in mechatronics, automation, and robotics. Reach out through any of these channels.</p>
+          <div className="contact-grid">
+            {profile.email && (
+              <a className="contact-tile" href={`mailto:${profile.email}`}>
+                <span className="contact-label">Email</span>
+                <span className="contact-value">{profile.email}</span>
+              </a>
+            )}
+            {profile.links?.map((l) => (
+              <a key={l.id} className="contact-tile" href={l.url} target="_blank" rel="noreferrer">
+                <span className="contact-label">{l.label}</span>
+                <span className="contact-value">{l.url.replace(/^https?:\/\//, '')}</span>
+              </a>
+            ))}
           </div>
         </section>
 
