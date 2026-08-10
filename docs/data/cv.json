@@ -96,11 +96,27 @@
   "education": [
     {
       "id": "ed1",
-      "school": "University Name",
-      "degree": "Degree, Field of Study",
-      "start": "2019",
-      "end": "2023",
-      "details": "Honors, relevant coursework, activities — optional."
+      "school": "Dedan Kimathi University of Technology",
+      "degree": "BSc, Mechatronics Engineering",
+      "start": "2020",
+      "end": "2025",
+      "details": "Second Class Upper"
+    },
+    {
+      "id": "edmsn8jynqmpqu",
+      "school": "CESI Lyon",
+      "degree": "Student Exchange Program — Generalist Informatique",
+      "start": "2025",
+      "end": "2025",
+      "details": "Selected for a 6-month project-based academic exchange covering AI, automation, and web development. Co-developed CESI Eats, a food delivery platform prototype, and modeled a 3D gluing automation system using AR-assisted\nlayout optimization."
+    },
+    {
+      "id": "edmsn8l7ghv6ue",
+      "school": "Nairobi School",
+      "degree": "High School Diploma",
+      "start": "",
+      "end": "",
+      "details": "Grade: A- (80)"
     }
   ],
   "projects": [
