@@ -46,7 +46,10 @@ export default function PublicSite() {
   return (
     <div className="doc">
       <aside className="index">
-        <div className="index-mark">FILE</div>
+        <div className="index-mark">
+          <span className="status-led" />
+          FILE
+        </div>
         <nav>
           {SECTIONS.map((s) => (
             <a key={s.id} href={`#${s.id}`} className="index-link">
@@ -69,11 +72,17 @@ export default function PublicSite() {
               <p className="title-line">{profile.title}</p>
             </div>
             {profile.photo && (
-              <img
-                className="profile-photo"
-                src={profile.photo.startsWith('http') ? profile.photo : `${import.meta.env.BASE_URL}${profile.photo}`}
-                alt={profile.name}
-              />
+              <span className="bracket-frame">
+                <span className="corner tl" />
+                <span className="corner tr" />
+                <span className="corner bl" />
+                <span className="corner br" />
+                <img
+                  className="profile-photo"
+                  src={profile.photo.startsWith('http') ? profile.photo : `${import.meta.env.BASE_URL}${profile.photo}`}
+                  alt={profile.name}
+                />
+              </span>
             )}
           </div>
           <p className="tagline">{profile.tagline}</p>
@@ -151,11 +160,17 @@ export default function PublicSite() {
             {projects?.map((p) => (
               <article key={p.id} className="project-card">
                 {p.image && (
-                  <img
-                    className="project-thumb"
-                    src={p.image.startsWith('http') ? p.image : `${import.meta.env.BASE_URL}${p.image}`}
-                    alt=""
-                  />
+                  <span className="bracket-frame project-thumb-frame">
+                    <span className="corner tl" />
+                    <span className="corner tr" />
+                    <span className="corner bl" />
+                    <span className="corner br" />
+                    <img
+                      className="project-thumb"
+                      src={p.image.startsWith('http') ? p.image : `${import.meta.env.BASE_URL}${p.image}`}
+                      alt=""
+                    />
+                  </span>
                 )}
                 <h3>{p.title}</h3>
                 <p>{p.description}</p>

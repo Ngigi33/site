@@ -1,16 +1,18 @@
 :root {
-  --paper: #f6f4ee;
-  --paper-raised: #fffffe;
-  --ink: #1e2126;
-  --ink-soft: #565c63;
-  --ink-faint: #8a8f96;
-  --accent: #2e6e7e;
-  --accent-warm: #b97a35;
-  --line: #dbd6c9;
-  --line-strong: #c3bdac;
-  --radius: 3px;
-  --display: "Fraunces", Georgia, serif;
-  --body: "Inter", -apple-system, sans-serif;
+  --bg: #0a0d12;
+  --panel: #12161d;
+  --panel-inset: #171d26;
+  --ink: #e7ebf1;
+  --ink-soft: #8c96a6;
+  --ink-faint: #4e5866;
+  --line: #212933;
+  --line-strong: #313d4b;
+  --blue: #4c8dff;
+  --blue-soft: #21324d;
+  --blue-dim: #6f9fe8;
+  --radius: 2px;
+  --display: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  --body: "IBM Plex Sans", -apple-system, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
@@ -24,7 +26,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--body);
   font-size: 16px;
@@ -33,11 +35,11 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--blue);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--blue);
   outline-offset: 2px;
 }
 

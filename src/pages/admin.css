@@ -2,6 +2,12 @@
   max-width: 760px;
   margin: 0 auto;
   padding: 56px 24px 100px;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
 }
 
 .eyebrow {
@@ -9,7 +15,7 @@
   font-size: 12px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent-warm);
+  color: var(--blue-dim);
   margin: 0 0 8px;
 }
 
@@ -27,7 +33,7 @@
 
 .hint code {
   font-family: var(--mono);
-  background: var(--paper-raised);
+  background: var(--panel);
   border: 1px solid var(--line);
   padding: 1px 5px;
   border-radius: 2px;
@@ -35,7 +41,7 @@
 
 /* Connect card */
 .connect-card {
-  background: var(--paper-raised);
+  background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 36px;
@@ -73,7 +79,7 @@ textarea {
   font-family: var(--body);
   font-size: 14px;
   color: var(--ink);
-  background: var(--paper);
+  background: var(--bg);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   padding: 9px 11px;
@@ -83,7 +89,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--blue);
 }
 
 textarea {
@@ -98,7 +104,7 @@ button {
 button[type='submit'],
 .primary {
   background: var(--ink);
-  color: var(--paper);
+  color: var(--bg);
   border: none;
   border-radius: var(--radius);
   padding: 11px 20px;
@@ -109,7 +115,7 @@ button[type='submit'],
 
 button[type='submit']:hover,
 .primary:hover {
-  background: var(--accent);
+  background: var(--blue);
 }
 
 button:disabled {
@@ -131,7 +137,7 @@ button:disabled {
 
 .token-help summary {
   cursor: pointer;
-  color: var(--accent);
+  color: var(--blue);
 }
 
 .token-help ol {
@@ -168,13 +174,13 @@ button:disabled {
 
 .ghost-link:hover,
 .ghost-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 /* Cards / sections */
 .card {
-  background: var(--paper-raised);
+  background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 28px;
@@ -200,7 +206,7 @@ button:disabled {
 .card .index-num {
   font-family: var(--mono);
   font-size: 12px;
-  color: var(--accent-warm);
+  color: var(--blue-dim);
 }
 
 .card > label {
@@ -240,7 +246,7 @@ button:disabled {
   border-radius: var(--radius);
   padding: 18px;
   margin-bottom: 16px;
-  background: var(--paper);
+  background: var(--bg);
 }
 
 .remove-btn {
@@ -288,11 +294,11 @@ button:disabled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--paper-raised);
+  background: var(--panel);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   padding: 14px 20px;
-  box-shadow: 0 4px 16px rgba(30, 33, 38, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .status {
@@ -306,7 +312,7 @@ button:disabled {
 }
 
 .status-success {
-  color: var(--accent);
+  color: var(--blue);
 }
 
 .upload-field {
@@ -328,7 +334,7 @@ button:disabled {
   font-family: var(--mono);
   font-size: 12px;
   margin-bottom: 8px;
-  color: var(--accent);
+  color: var(--blue);
 }
 
 .upload-row {
@@ -348,7 +354,7 @@ button:disabled {
   font-family: var(--mono);
   font-size: 12px;
   color: var(--ink);
-  background: var(--paper);
+  background: var(--bg);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   padding: 0 14px;
@@ -356,8 +362,8 @@ button:disabled {
 }
 
 .upload-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 @media (max-width: 600px) {
@@ -377,4 +383,3 @@ button:disabled {
     gap: 16px;
   }
 }
-
