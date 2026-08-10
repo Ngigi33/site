@@ -142,12 +142,14 @@
     },
     {
       "id": "pmsn9sxy7ynsz",
-      "title": "",
-      "description": "",
-      "tags": [],
-      "link": "",
-      "repo": "",
-      "image": ""
+      "title": "IoT Relay Control System",
+      "description": "Created a globally accessible IoT control system using ESP32 endpoints, MQTT (HiveMQ),\nNode-RED dashboards, and Cloudflare tunneling.",
+      "tags": [
+        "IOT"
+      ],
+      "link": "https://drive.google.com/drive/folders/1l-H2zpASmsLtlHw343BDR34_cCFZM60w?usp=sharing",
+      "repo": "https://drive.google.com/file/d/1VXLp59sg6ycX8hr6zancuSIMGC3ald_h/view?usp=sharing",
+      "image": "assets/uploads/1786387317569-WhatsApp-Image-2026-08-10-at-21.30.10.jpeg"
     },
     {
       "id": "pmsn9syldt9ku",
