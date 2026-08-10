@@ -1,23 +1,23 @@
 {
   "profile": {
     "name": "Joe Albert Ngigi ",
-    "title": "Your Title — e.g. Software Engineer",
-    "tagline": "One sentence on what you do and what you care about.",
-    "bio": "A few sentences about your background, what you're working on now, and what you're looking for. Edit this from the admin panel.",
-    "location": "City, Country",
-    "email": "you@example.com",
+    "title": "Mechatronics & Automation Engineer",
+    "tagline": "Mechatronics & Automation Engineer WorldSkills Lyon 2024 Champion · PLC/SCADA · Robotics · Embedded IoT",
+    "bio": "Mechatronics engineer with hands-on experience across industrial automation, robotics, and embedded IoT systems. WorldSkills Lyon 2024 international champion and Kenya's 2023 national gold medalist in Mechatronics, with a track record of turning complex technical problems into safe, reliable, well-documented solutions.",
+    "location": "Nairobi , Kenya",
+    "email": "joe.albert.ngigi@gmail.com",
     "photo": "",
     "videoUrl": "",
     "links": [
       {
         "id": "l1",
         "label": "GitHub",
-        "url": "https://github.com/yourname"
+        "url": "https://github.com/Ngigi33"
       },
       {
         "id": "l2",
         "label": "LinkedIn",
-        "url": "https://linkedin.com/in/yourname"
+        "url": "https://www.linkedin.com/in/joe-ngigi-988548232/"
       }
     ]
   },
