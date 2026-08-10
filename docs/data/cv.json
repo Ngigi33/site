@@ -1,6 +1,6 @@
 {
   "profile": {
-    "name": "Your Name",
+    "name": "Joe Albert Ngigi ",
     "title": "Your Title — e.g. Software Engineer",
     "tagline": "One sentence on what you do and what you care about.",
     "bio": "A few sentences about your background, what you're working on now, and what you're looking for. Edit this from the admin panel.",
@@ -9,8 +9,16 @@
     "photo": "",
     "videoUrl": "",
     "links": [
-      { "id": "l1", "label": "GitHub", "url": "https://github.com/yourname" },
-      { "id": "l2", "label": "LinkedIn", "url": "https://linkedin.com/in/yourname" }
+      {
+        "id": "l1",
+        "label": "GitHub",
+        "url": "https://github.com/yourname"
+      },
+      {
+        "id": "l2",
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/in/yourname"
+      }
     ]
   },
   "experience": [
@@ -42,15 +50,32 @@
       "id": "p1",
       "title": "Project Name",
       "description": "What it is and why you built it.",
-      "tags": ["React", "Node.js"],
+      "tags": [
+        "React",
+        "Node.js"
+      ],
       "link": "https://example.com",
       "repo": "https://github.com/yourname/project",
       "image": ""
     }
   ],
   "skills": [
-    { "id": "s1", "category": "Languages", "items": ["JavaScript", "Python"] },
-    { "id": "s2", "category": "Tools", "items": ["Git", "Docker"] }
+    {
+      "id": "s1",
+      "category": "Languages",
+      "items": [
+        "JavaScript",
+        "Python"
+      ]
+    },
+    {
+      "id": "s2",
+      "category": "Tools",
+      "items": [
+        "Git",
+        "Docker"
+      ]
+    }
   ],
   "awards": [
     {
