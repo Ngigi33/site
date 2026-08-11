@@ -159,24 +159,6 @@
       "link": "https://drive.google.com/drive/folders/1l-H2zpASmsLtlHw343BDR34_cCFZM60w?usp=sharing",
       "repo": "https://drive.google.com/file/d/1VXLp59sg6ycX8hr6zancuSIMGC3ald_h/view?usp=sharing",
       "image": "assets/uploads/1786387317569-WhatsApp-Image-2026-08-10-at-21.30.10.jpeg"
-    },
-    {
-      "id": "pmsn9syldt9ku",
-      "title": "",
-      "description": "",
-      "tags": [],
-      "link": "",
-      "repo": "",
-      "image": ""
-    },
-    {
-      "id": "pmsn9sz4cylb4",
-      "title": "",
-      "description": "",
-      "tags": [],
-      "link": "",
-      "repo": "",
-      "image": ""
     }
   ],
   "skills": [
@@ -184,16 +166,59 @@
       "id": "s1",
       "category": "Languages",
       "items": [
-        "JavaScript",
-        "Pythonc+++"
+        "English",
+        "Swahili",
+        "French"
       ]
     },
     {
       "id": "s2",
       "category": "Tools",
       "items": [
-        "Git",
-        "Docker"
+        "Git/GitHub",
+        "Docker",
+        "AWS",
+        "Node-RED",
+        "Firebase"
+      ]
+    },
+    {
+      "id": "smsobcnjsqz34",
+      "category": "Automation & Controls ",
+      "items": [
+        "PLC Programming (Siemens)",
+        "SCADA / HMI Development",
+        "LOTO Safety Procedures"
+      ]
+    },
+    {
+      "id": "smsobebwev31y",
+      "category": "Robotics",
+      "items": [
+        "ROS (Gazebo",
+        "RViz)",
+        "SLAM",
+        "Manipulator"
+      ]
+    },
+    {
+      "id": "smsobfoexcvk1",
+      "category": "Software",
+      "items": [
+        "Python",
+        "C++ (ROS)",
+        "Dashboard & Cloud Integration"
+      ]
+    },
+    {
+      "id": "smsobhpqx5ftt",
+      "category": "Embedded & IoT ",
+      "items": [
+        "Arduino",
+        "ESP32",
+        "STM32 (STM32CubeIDE)",
+        "Raspberry Pi",
+        "PCB Design"
       ]
     }
   ],
