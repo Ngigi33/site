@@ -225,18 +225,38 @@
   "awards": [
     {
       "id": "aw1",
-      "title": "Award Name",
-      "issuer": "Issuing Organization",
-      "date": "2024",
-      "description": "Optional — what it was for."
+      "title": "WorldSkills Lyon 2024 - Champion - Mechatronics",
+      "issuer": "WorldSkills International",
+      "date": "Sep 2024",
+      "description": "Optional — what it was for.",
+      "credentialUrl": "https://www.credly.com/badges/ef13697a-8c92-49a9-989a-a124bed70af3",
+      "file": "assets/uploads/1786434806580-WSC2024Competitor-220241015-7-72uudw.pdf"
+    },
+    {
+      "id": "awmsod6naak7dj",
+      "title": "World Skills Kenya 2023 Mechatronics Skill Gold Medalist",
+      "issuer": "Issued by WorldSkills Kenya",
+      "date": "Sep 2023",
+      "description": "",
+      "credentialUrl": "",
+      "file": "assets/uploads/1786434887992-WorldSkills-Kenya-2023-Mechatronics-Gold-Medalist.pdf"
+    },
+    {
+      "id": "awmsod7pkwr665",
+      "title": "Technical Award Winner — Robotics Dojo 2024",
+      "issuer": "Jomo Kenyatta University of Agriculture and Technology (JKUAT) — Africa-ai-Japan Project (Phase 2)",
+      "date": "October 2024.",
+      "description": "Won the Technical Award as part of Joint Team 6 (PentaSlam) at Robotics Dojo 2024, a robotics competition held at JKUAT under the Africa-ai-Japan Project, a collaboration between the African Union, African innovation networks, and the PAUSTI Network. Competed alongside a five-member cross-institutional team, contributing technical robotics expertise that secured the award for the strongest engineering execution in the competition.",
+      "credentialUrl": "",
+      "file": "assets/uploads/1786435095625-Robodojo.pdf"
     }
   ],
   "certifications": [
     {
       "id": "c1",
-      "title": "Certification Name",
-      "issuer": "Issuing Organization",
-      "date": "2024",
+      "title": "",
+      "issuer": "",
+      "date": "",
       "credentialUrl": "",
       "file": ""
     }
