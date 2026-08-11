@@ -220,7 +220,7 @@ function Editor({ config, data, setData, sha, setSha, status, setStatus, onDisco
           <EducationEditor items={data.education} onChange={(v) => update('education', v)} />
           <ProjectsEditor items={data.projects} onChange={(v) => update('projects', v)} config={config} />
           <SkillsEditor items={data.skills} onChange={(v) => update('skills', v)} />
-          <AwardsEditor items={data.awards || []} onChange={(v) => update('awards', v)} />
+          <AwardsEditor items={data.awards || []} onChange={(v) => update('awards', v)} config={config} />
           <CertificationsEditor items={data.certifications || []} onChange={(v) => update('certifications', v)} config={config} />
 
           <div className="save-bar">
@@ -673,12 +673,15 @@ function SkillsEditor({ items, onChange }) {
   )
 }
 
-function AwardsEditor({ items, onChange }) {
+function AwardsEditor({ items, onChange, config }) {
   function update(id, field, value) {
     onChange(items.map((it) => (it.id === id ? { ...it, [field]: value } : it)))
   }
   function add() {
-    onChange([...items, { id: makeId('aw'), title: '', issuer: '', date: '', description: '' }])
+    onChange([
+      ...items,
+      { id: makeId('aw'), title: '', issuer: '', date: '', description: '', credentialUrl: '', file: '' }
+    ])
   }
   function remove(id) {
     onChange(items.filter((it) => it.id !== id))
@@ -706,6 +709,18 @@ function AwardsEditor({ items, onChange }) {
             Description (optional)
             <textarea rows={2} value={it.description} onChange={(e) => update(it.id, 'description', e.target.value)} />
           </label>
+          <label>
+            Credential URL (optional — link to verify online)
+            <input value={it.credentialUrl || ''} onChange={(e) => update(it.id, 'credentialUrl', e.target.value)} />
+          </label>
+          <UploadField
+            label="Award file (image or PDF)"
+            value={it.file}
+            onChange={(v) => update(it.id, 'file', v)}
+            config={config}
+            accept="image/*,application/pdf"
+            kind="file"
+          />
           <button className="remove-btn-wide" onClick={() => remove(it.id)}>
             Remove this award
           </button>

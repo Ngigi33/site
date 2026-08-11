@@ -244,6 +244,24 @@ export default function PublicSite() {
                   <h3>{a.title}</h3>
                   <p className="entry-sub">{a.issuer}</p>
                   {a.description && <p className="entry-details">{a.description}</p>}
+                  {(a.credentialUrl || a.file) && (
+                    <div className="cert-links">
+                      {a.credentialUrl && (
+                        <a href={a.credentialUrl} target="_blank" rel="noreferrer">
+                          Verify
+                        </a>
+                      )}
+                      {a.file && (
+                        <a
+                          href={a.file.startsWith('http') ? a.file : `${import.meta.env.BASE_URL}${a.file}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Certificate
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </article>
             ))}
