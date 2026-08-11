@@ -235,6 +235,22 @@ function Editor({ config, data, setData, sha, setSha, status, setStatus, onDisco
   )
 }
 
+// A comma-separated text input. Keeps its own raw text in state so the
+// display doesn't get rewritten mid-keystroke — re-deriving the input value
+// from the parsed array on every change would silently eat trailing commas
+// and spaces as you type.
+function TagsInput({ value, onChange, placeholder }) {
+  const [text, setText] = useState((value || []).join(', '))
+
+  function handleChange(e) {
+    const t = e.target.value
+    setText(t)
+    onChange(t.split(',').map((s) => s.trim()).filter(Boolean))
+  }
+
+  return <input value={text} onChange={handleChange} placeholder={placeholder} />
+}
+
 // ---------------------------------------------------------------------------
 // Reusable file upload field — uploads immediately to the repo and hands
 // back the resulting relative path via onChange.
@@ -361,6 +377,10 @@ function ProfileEditor({ profile, onChange, config }) {
           <input value={profile.email} onChange={(e) => set('email', e.target.value)} />
         </label>
       </div>
+      <label>
+        Currently (short status line — e.g. "Open to opportunities", "Building X at Y")
+        <input value={profile.status || ''} onChange={(e) => set('status', e.target.value)} />
+      </label>
 
       <UploadField
         label="Profile photo"
@@ -564,13 +584,6 @@ function ProjectsEditor({ items, onChange, config }) {
   function update(id, field, value) {
     onChange(items.map((it) => (it.id === id ? { ...it, [field]: value } : it)))
   }
-  function updateTags(id, text) {
-    update(
-      id,
-      'tags',
-      text.split(',').map((t) => t.trim()).filter(Boolean)
-    )
-  }
   function add() {
     onChange([
       ...items,
@@ -595,7 +608,7 @@ function ProjectsEditor({ items, onChange, config }) {
           </label>
           <label>
             Tags (comma separated)
-            <input value={(it.tags || []).join(', ')} onChange={(e) => updateTags(it.id, e.target.value)} />
+            <TagsInput value={it.tags} onChange={(v) => update(it.id, 'tags', v)} />
           </label>
           <div className="row-2">
             <label>
@@ -629,13 +642,6 @@ function SkillsEditor({ items, onChange }) {
   function update(id, field, value) {
     onChange(items.map((it) => (it.id === id ? { ...it, [field]: value } : it)))
   }
-  function updateItems(id, text) {
-    update(
-      id,
-      'items',
-      text.split(',').map((t) => t.trim()).filter(Boolean)
-    )
-  }
   function add() {
     onChange([...items, { id: makeId('s'), category: '', items: [] }])
   }
@@ -654,7 +660,7 @@ function SkillsEditor({ items, onChange }) {
             </label>
             <label>
               Items (comma separated)
-              <input value={(it.items || []).join(', ')} onChange={(e) => updateItems(it.id, e.target.value)} />
+              <TagsInput value={it.items} onChange={(v) => update(it.id, 'items', v)} />
             </label>
             <button className="remove-btn" onClick={() => remove(it.id)} aria-label="Remove category">
               ×

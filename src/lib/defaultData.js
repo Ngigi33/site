@@ -8,6 +8,7 @@ export const defaultData = {
     bio: 'A few sentences about your background, what you\'re working on now, and what you\'re looking for. Edit this from the admin panel.',
     location: 'City, Country',
     email: 'you@example.com',
+    status: 'Open to opportunities',
     photo: '',
     videoUrl: '',
     links: [

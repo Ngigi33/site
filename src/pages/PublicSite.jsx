@@ -88,6 +88,12 @@ export default function PublicSite() {
             )}
           </div>
           <p className="tagline">{profile.tagline}</p>
+          {profile.status && (
+            <p className="status-line">
+              <span className="status-led" />
+              {profile.status}
+            </p>
+          )}
           <p className="bio">{profile.bio}</p>
           <div className="meta-row">
             {profile.location && <span>{profile.location}</span>}
@@ -99,6 +105,14 @@ export default function PublicSite() {
                 {l.label}
               </a>
             ))}
+          </div>
+          <div className="cta-row">
+            <a className="cta-btn" href="#projects">
+              View projects
+            </a>
+            <a className="cta-btn cta-btn-outline" href="#contact">
+              Get in touch
+            </a>
           </div>
           {profile.videoUrl && <VideoEmbed url={profile.videoUrl} />}
         </section>

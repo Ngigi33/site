@@ -188,7 +188,7 @@
 
 .bio {
   color: var(--ink-soft);
-  max-width: 70ch;
+  max-width: 62ch;
   margin: 0 0 24px;
 }
 
@@ -210,6 +210,59 @@
 .meta-row a:hover {
   color: var(--blue);
   border-color: var(--blue);
+}
+
+.status-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: -8px 0 20px;
+}
+
+.status-line .status-led {
+  width: 6px;
+  height: 6px;
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  margin: 8px 0 4px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 13px;
+  text-decoration: none;
+  padding: 11px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  color: #06121f;
+  font-weight: 500;
+  transition: opacity 0.15s ease;
+}
+
+.cta-btn:hover {
+  opacity: 0.85;
+}
+
+.cta-btn-outline {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.cta-btn-outline:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  opacity: 1;
 }
 
 /* bracket frame — computer-vision detection box motif */
