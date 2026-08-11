@@ -254,11 +254,35 @@
   "certifications": [
     {
       "id": "c1",
-      "title": "",
-      "issuer": "",
-      "date": "",
+      "title": "Siemens Mechatronic Systems Certification Program (SMSCP) Associate",
+      "issuer": "Siemens",
+      "date": "Aug 2023",
       "credentialUrl": "",
-      "file": ""
+      "file": "assets/uploads/1786435580960-Siemens-Associate-certfication.pdf"
+    },
+    {
+      "id": "cmsodmefaz46t",
+      "title": "Siemens Mechatronic Systems Certification Program (SMSCP) Assistant  ",
+      "issuer": "Siemens",
+      "date": "Sep 2022",
+      "credentialUrl": "",
+      "file": "assets/uploads/1786435793882-Siemens-Assistant-Certfication.pdf"
+    },
+    {
+      "id": "cmsodnbtzm0q0",
+      "title": "IoT Certification Course",
+      "issuer": "Hubiquitous Catalyst Program — in partnership with IEEE DeKUT Student Branch & DeKUT Innovators Club",
+      "date": "2024",
+      "credentialUrl": "",
+      "file": "assets/uploads/1786435782649-IOT-certification.pdf"
+    },
+    {
+      "id": "cmsodpy26e737",
+      "title": "Python Core",
+      "issuer": "Sololearn",
+      "date": "2026-06-08",
+      "credentialUrl": "",
+      "file": "assets/uploads/1786435776261-Python_Certificate.pdf"
     }
   ]
 }
