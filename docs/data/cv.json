@@ -159,6 +159,23 @@
       "link": "https://drive.google.com/drive/folders/1l-H2zpASmsLtlHw343BDR34_cCFZM60w?usp=sharing",
       "repo": "https://drive.google.com/file/d/1VXLp59sg6ycX8hr6zancuSIMGC3ald_h/view?usp=sharing",
       "image": "assets/uploads/1786387317569-WhatsApp-Image-2026-08-10-at-21.30.10.jpeg"
+    },
+    {
+      "id": "pmspq0rtmtbiv",
+      "title": "PLC Elevator Digital Twin ",
+      "description": "Built a real-time digital twin of an elevator control system, pairing a hand-crafted metal elevator model with a Siemens S7-1200 PLC. Programmed the control logic in TIA Portal/Step 7, implemented PID-based precision motion control via a Sinamics G120 VFD (tuned with Sinamics StartDrive), and designed an interactive WinCC HMI for real-time monitoring and control. The project bridges physical hardware and digital simulation to demonstrate a complete smart automation workflow, from motor control to operator interface.",
+      "tags": [
+        "\"PLC\"",
+        "\"Siemens S7-1200\"",
+        "\"TIA Portal\"",
+        "\"WinCC HMI\"",
+        "\"PID Control\"",
+        "\"Sinamics G120 VFD\"",
+        "\"Digital Twin\""
+      ],
+      "link": "https://github.com/user-attachments/assets/47cee7fd-2f56-4725-80d6-4409607cb457",
+      "repo": "https://github.com/Ngigi33/PLC_ELEVATOR_DIGITAL_TWIN",
+      "image": ""
     }
   ],
   "skills": [
