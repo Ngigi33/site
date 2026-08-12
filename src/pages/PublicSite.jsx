@@ -113,6 +113,15 @@ export default function PublicSite() {
             <a className="cta-btn cta-btn-outline" href="#contact">
               Get in touch
             </a>
+            {profile.resumeFile && (
+              <a
+                className="cta-btn cta-btn-outline"
+                href={profile.resumeFile.startsWith('http') ? profile.resumeFile : `${import.meta.env.BASE_URL}${profile.resumeFile}`}
+                download
+              >
+                Download CV
+              </a>
+            )}
           </div>
           {profile.videoUrl && <VideoEmbed url={profile.videoUrl} />}
         </section>
@@ -324,9 +333,6 @@ export default function PublicSite() {
           </div>
         </section>
 
-        <footer className="doc-footer">
-          <a href="./admin.html">Edit this page</a>
-        </footer>
       </div>
       </main>
     </div>

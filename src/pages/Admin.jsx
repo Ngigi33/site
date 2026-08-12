@@ -391,6 +391,15 @@ function ProfileEditor({ profile, onChange, config }) {
         kind="image"
       />
 
+      <UploadField
+        label="Resume / CV (PDF) — powers the Download CV button"
+        value={profile.resumeFile}
+        onChange={(v) => set('resumeFile', v)}
+        config={config}
+        accept="application/pdf"
+        kind="file"
+      />
+
       <div className="upload-field">
         <p className="sub-label">Intro video</p>
         <p className="hint" style={{ marginBottom: 8 }}>

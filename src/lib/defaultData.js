@@ -10,6 +10,7 @@ export const defaultData = {
     email: 'you@example.com',
     status: 'Open to opportunities',
     photo: '',
+    resumeFile: '',
     videoUrl: '',
     links: [
       { id: 'l1', label: 'GitHub', url: 'https://github.com/yourname' },
@@ -61,7 +62,9 @@ export const defaultData = {
       title: 'Award Name',
       issuer: 'Issuing Organization',
       date: '2024',
-      description: 'Optional — what it was for.'
+      description: 'Optional — what it was for.',
+      credentialUrl: '',
+      file: ''
     }
   ],
   certifications: [

@@ -533,22 +533,6 @@
   font-size: 14px;
 }
 
-.doc-footer {
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
-}
-
-.doc-footer a {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--ink-faint);
-  text-decoration: none;
-}
-
-.doc-footer a:hover {
-  color: var(--blue);
-}
-
 @media (min-width: 1180px) {
   .project-grid {
     grid-template-columns: repeat(3, 1fr);
