@@ -177,6 +177,21 @@
       "link": "https://github.com/user-attachments/assets/47cee7fd-2f56-4725-80d6-4409607cb457",
       "repo": "https://github.com/Ngigi33/PLC_ELEVATOR_DIGITAL_TWIN",
       "image": "assets/uploads/1786521764479-elevator.png"
+    },
+    {
+      "id": "pmsr89pea1gvw",
+      "title": "Rainfall Simulator",
+      "description": "Designed and built a rainfall intensity simulator as a thesis project, using an Arduino Nano to control a motorized ball valve and precisely regulate water flow rate. The system reproduces a range of rainfall intensities, from light drizzle to heavy downpour, enabling controlled, repeatable testing conditions for rainfall-dependent experiments or demonstrations.",
+      "tags": [
+        "\"Arduino Nano\"",
+        "\"Motorized Ball Valve\"",
+        "\"Flow Control\"",
+        "\"Embedded Systems\"",
+        "\"Thesis Project\""
+      ],
+      "link": "",
+      "repo": "https://github.com/Ngigi33/RAINFALL_SIMULATOR",
+      "image": "assets/uploads/1786610901542-pic.jpeg"
     }
   ],
   "skills": [
